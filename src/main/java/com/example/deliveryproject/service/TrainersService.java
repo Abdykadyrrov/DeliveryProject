@@ -2,21 +2,20 @@ package com.example.deliveryproject.service;
 
 import com.example.deliveryproject.entity.Trainers;
 import com.example.deliveryproject.repository.TrainersRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class TrainersService {
     private final TrainersRepository trainersRepository;
 
-    public TrainersService(TrainersRepository trainersRepository) {
-        this.trainersRepository = trainersRepository;
-    }
-
     public List<Trainers> getAllTrainers(){
-        return trainersRepository.findAll();
+        return (List<Trainers>) trainersRepository.findAll();
     }
 
     public Optional<Trainers> getTrainersById(Long id){

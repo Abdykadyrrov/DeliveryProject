@@ -3,36 +3,36 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Trainers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>All People</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
 </head>
 <body>
-
-<div class="container">
-    <h3>List of Trainers:</h3>
-    <table class="table table-warning table-group-divider">
-        <thead>
+<table class="table table-success table-striped table-hover">
+    <caption>List of the users</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Birth Year</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="person:${findAll}">
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
+            <td th:text="${person.getId()}"/>
+            <td th:text="${person.getUsername()}"/>
+            <td th:text="${person.getBirthYear()}"/>
+            <td th:text="${person.getRole()}"/>
         </tr>
-        </thead>
-        <tbody class="table-group-divider">
+    </div>
+    </tbody>
+</table>
 
-        <div>
-            <#list allTrainers as trainers>
-            <tr>
-                <td>${trainers.getId()}</td>
-                <td>${trainers.getTitle()}</td>
-                <td>${trainers.getPrice()}</td>
-                <td>${trainers.getDescription()}</td>
-            </tr>
-            </#list>
-        </div>
-        </tbody>
-    </table>
-</div>
 </body>
 </html>
