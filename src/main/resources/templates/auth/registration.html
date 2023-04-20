@@ -276,7 +276,7 @@
 
 <div class="row g-0">
     <div class="col-sm-6 col-md-7">
-        <form th:method="POST" th:action="@{/auth/register}" th:object="${person}">
+        <form th:method="POST" th:action="@{/auth/register}" th:object="${user}">
             <div class="block_form">
                 <p class="email_text">Enter your username</p>
                 <div class="form">
@@ -289,13 +289,6 @@
                 <div class="form">
                     <input class="form__input password" type="password" placeholder="Password" th:field="*{password}">
                     <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Errors</p>
-                </div>
-            </div>
-            <div class="block_form">
-                <p class="name_text">Your year</p>
-                <div class="form">
-                    <input type="text" class="form__input" th:field="*{birthYear}" placeholder="Birth Year">
-                    <p th:if="${#fields.hasErrors('birthYear')}" th:errors="*{birthYear}">Errors</p>
                 </div>
             </div>
             <div class="form_submit">
