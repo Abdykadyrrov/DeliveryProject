@@ -15,7 +15,7 @@ public class TrainersService {
     private final TrainersRepository trainersRepository;
 
     public List<Trainers> getAllTrainers(){
-        return (List<Trainers>) trainersRepository.findAll();
+        return trainersRepository.findAll();
     }
 
     public Optional<Trainers> getTrainersById(Long id){
@@ -26,8 +26,8 @@ public class TrainersService {
         return trainersRepository.findTrainersByTitle(title);
     }
 
-    public List<Trainers> getTrainersByGender(String gender){
-        return trainersRepository.findTrainersByGender(gender);
+    public List<Trainers> getTrainersByGender(String category){
+        return trainersRepository.findTrainersByCategory(category);
     }
 
 }

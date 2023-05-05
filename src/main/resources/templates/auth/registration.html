@@ -281,18 +281,15 @@
                 <p class="email_text">Enter your username</p>
                 <div class="form">
                     <input class="form__input user_form" type="text" placeholder="Username" th:field="*{username}">
-                    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error">Errors</p>
+                    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error"></p>
                 </div>
             </div>
             <div class="block_form password__lable">
                 <p class="name_text">Enter your password</p>
                 <div class="form">
                     <input class="form__input password" type="password" placeholder="Password" th:field="*{password}">
-                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Errors</p>
+                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
                 </div>
-            </div>
-            <div class="form_submit">
-                <button type="submit" class="knop">SIGN UP</button>
             </div>
         </form>
     </div>

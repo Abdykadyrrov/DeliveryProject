@@ -13,7 +13,7 @@ public class TrainersDto {
                 .title(trainers.getTitle())
                 .image(trainers.getImage())
                 .price(trainers.getPrice())
-                .gender(trainers.getGender())
+                .gender(trainers.getCategory())
                 .description(trainers.getDescription())
                 .build();
     }
